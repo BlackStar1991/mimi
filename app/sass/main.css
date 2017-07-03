@@ -961,8 +961,9 @@ hr {
 /*********************************************/
 body {
   font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 400;
+  color: #000;
   min-width: 320px;
   position: relative; }
 
@@ -1017,7 +1018,8 @@ button {
 .bl_header {
   background-color: #ed7d31;
   width: 100%;
-  min-height: 130px; }
+  min-height: 130px;
+  border-bottom: 8px double #000; }
   .bl_header__full {
     margin-top: 2%;
     padding-bottom: 2%; }
@@ -1029,24 +1031,29 @@ button {
   margin-left: 10%;
   width: 75px;
   height: 75px;
-  border: 1px solid red;
+  border: 1px solid green;
   box-sizing: border-box; }
   .bl_eye-checkbox {
     position: absolute;
     top: 60%;
     left: 10px;
     opacity: 0; }
+  .bl_eye input[type=checkbox]:checked + .bl_eye-switch {
+    transition: .3s ease;
+    top: 60%;
+    left: 36px; }
   .bl_eye__eyebrow {
     position: absolute;
     top: 0;
-    left: 5px;
+    left: -13px;
+    background-image: url(../img/sprite.png);
+    background-position: -77px -43px;
     width: 24px;
     height: 25px;
-    border-left: 2px solid #000;
-    border-radius: 50%; }
+    z-index: 11; }
   .bl_eye-label {
-    position: relative;
-    margin-top: 70%;
+    position: absolute;
+    bottom: 0;
     width: 70px;
     height: 37px;
     background-color: #020202;
@@ -1062,6 +1069,81 @@ button {
     border-radius: 50%;
     background-color: #fad9c2;
     z-index: 10; }
+  .bl_eye_mouth {
+    position: absolute;
+    left: 0;
+    bottom: -15%;
+    background-image: url(../img/sprite.png);
+    background-position: 0px 0px;
+    width: 72px;
+    height: 68px;
+    z-index: 13; }
+  .bl_eye_tougle {
+    position: absolute;
+    left: 0;
+    bottom: -15%;
+    background-image: url(../img/sprite.png);
+    background-position: -81px -73px;
+    width: 15px;
+    height: 14px;
+    z-index: 14; }
+
+.bl_adress {
+  position: relative;
+  float: right;
+  width: 305px;
+  height: 72px;
+  display: inline-block; }
+  .bl_adress__firstAdress {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0; }
+  .bl_adress__secondAdress {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 150%; }
+  .bl_adress__tel {
+    text-align: right;
+    font-family: "ArialRoundedMTBold", sans-serif;
+    line-height: 25px; }
+    .bl_adress__tel_code {
+      font-size: 36px; }
+    .bl_adress__tel_mail {
+      font-size: 51px; }
+  .bl_adress__street {
+    margin-top: 10px;
+    text-align: right;
+    font-family: "CenturyGothic", sans-serif;
+    font-size: 25px;
+    line-height: 25px; }
+  .bl_adress__socButtons {
+    clear: both;
+    float: right; }
+  .bl_adress__email {
+    float: right;
+    vertical-align: top;
+    margin-left: 10px;
+    background-image: url(../img/sprite.png);
+    background-position: 0px -73px;
+    width: 36px;
+    height: 38px; }
+  .bl_adress__facebook {
+    float: right;
+    vertical-align: top;
+    margin-left: 10px;
+    background-image: url(../img/sprite.png);
+    background-position: -77px 0px;
+    width: 38px;
+    height: 38px; }
+  .bl_adress__instagram {
+    float: right;
+    vertical-align: top;
+    background-image: url(../img/sprite.png);
+    background-position: -41px -73px;
+    width: 35px;
+    height: 35px; }
 
 /*********************************************/
 /*SECTIONS*/
@@ -1074,6 +1156,26 @@ button {
   padding: 0;
   margin: 0 !important;
   overflow: hidden; }
+
+.bl_main {
+  clear: both;
+  background-color: #ed7d31;
+  width: 100%;
+  min-height: 597px;
+  padding-top: 2px;
+  border-top: 8px solid #000;
+  border-bottom: 8px double #000; }
+
+.bl_video {
+  border: 1px solid red;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25); }
+  .bl_video__icon {
+    position: absolute;
+    bottom: 19px;
+    right: 16px; }
 
 /*********************************************/
 /*FOOTER*/

@@ -1,7 +1,11 @@
+
 .bl_header {
   background-color: $color_orange;
   width: 100%;
   min-height: 130px;
+
+  border-bottom: 8px double #000;
+
 
   &__full {
     margin-top: 2%;
@@ -20,7 +24,7 @@
   width: 75px;
   height: 75px;
 
-  border: 1px solid red;
+  border: 1px solid green;
   box-sizing: border-box;
 
   &-checkbox {
@@ -28,23 +32,27 @@
     top: 60%;
     left: 10px;
     opacity: 0;
+
+
   }
+  input[type=checkbox]:checked + .bl_eye-switch{
+    transition:.3s ease;
+    top: 60%;
+    left: 36px;
+  }
+
 
   &__eyebrow {
     position: absolute;
     top: 0;
-    left: 5px;
-    width: 24px;
-    height: 25px;
-    border-left: 2px solid #000;
-    border-radius: 50%;
+    left: -13px;
+    @include sprite($eyebrow);
+    z-index: 11;
   }
 
   &-label {
-    position: relative;
-
-
-    margin-top: 70%;
+    position: absolute;
+    bottom: 0;
     width: 70px;
     height: 37px;
     background-color: #020202;
@@ -65,6 +73,94 @@
 
   }
 
+  &_mouth{
+    position: absolute;
+    left: 0;
+    bottom: -15%;
+    @include sprite($mouth);
+    z-index:13;
+  }
+
+  &_tougle{
+    position: absolute;
+    left: 0;
+    bottom: -15%;
+    @include sprite($tongue);
+    z-index:14;
+  }
+
+}
+
+.bl_adress{
+  position: relative;
+  float: right;
+  width: 305px;
+  height: 72px;
+  display: inline-block;
+
+
+  //overflow: hidden;
+
+  &__firstAdress{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  &__secondAdress{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 150%;
+  }
+
+  &__tel{
+    text-align: right;
+    font-family: $ArialRoundedBold;
+    line-height: 25px;
+    &_code{
+      font-size: 36px;
+    }
+
+    &_mail{
+      font-size: 51px;
+    }
+
+  }
+
+  &__street{
+    margin-top: 10px;
+    text-align: right;
+    font-family: $CenturyGothic;
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+// SOCBUTTONS
+
+  &__socButtons{
+    clear: both;
+    float: right;
+
+  }
+  &__email{
+    float: right;
+    vertical-align: top;
+    margin-left: 10px;
+    @include sprite($email);
+  }
+  &__facebook{
+    float: right;
+    vertical-align: top;
+    margin-left: 10px;
+    @include sprite($facebook);
+  }
+
+  &__instagram{
+    float: right;
+    vertical-align: top;
+    @include sprite($instagram);
+  }
 }
 
 

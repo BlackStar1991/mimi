@@ -1,0 +1,145 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$email-name: 'email';
+$email-x: 0px;
+$email-y: 73px;
+$email-offset-x: 0px;
+$email-offset-y: -73px;
+$email-width: 36px;
+$email-height: 38px;
+$email-total-width: 115px;
+$email-total-height: 111px;
+$email-image: '../img/sprite.png';
+$email: (0px, 73px, 0px, -73px, 36px, 38px, 115px, 111px, '../img/sprite.png', 'email', );
+$eyebrow-name: 'eyebrow';
+$eyebrow-x: 77px;
+$eyebrow-y: 43px;
+$eyebrow-offset-x: -77px;
+$eyebrow-offset-y: -43px;
+$eyebrow-width: 24px;
+$eyebrow-height: 25px;
+$eyebrow-total-width: 115px;
+$eyebrow-total-height: 111px;
+$eyebrow-image: '../img/sprite.png';
+$eyebrow: (77px, 43px, -77px, -43px, 24px, 25px, 115px, 111px, '../img/sprite.png', 'eyebrow', );
+$facebook-name: 'facebook';
+$facebook-x: 77px;
+$facebook-y: 0px;
+$facebook-offset-x: -77px;
+$facebook-offset-y: 0px;
+$facebook-width: 38px;
+$facebook-height: 38px;
+$facebook-total-width: 115px;
+$facebook-total-height: 111px;
+$facebook-image: '../img/sprite.png';
+$facebook: (77px, 0px, -77px, 0px, 38px, 38px, 115px, 111px, '../img/sprite.png', 'facebook', );
+$instagram-name: 'instagram';
+$instagram-x: 41px;
+$instagram-y: 73px;
+$instagram-offset-x: -41px;
+$instagram-offset-y: -73px;
+$instagram-width: 35px;
+$instagram-height: 35px;
+$instagram-total-width: 115px;
+$instagram-total-height: 111px;
+$instagram-image: '../img/sprite.png';
+$instagram: (41px, 73px, -41px, -73px, 35px, 35px, 115px, 111px, '../img/sprite.png', 'instagram', );
+$mouth-name: 'mouth';
+$mouth-x: 0px;
+$mouth-y: 0px;
+$mouth-offset-x: 0px;
+$mouth-offset-y: 0px;
+$mouth-width: 72px;
+$mouth-height: 68px;
+$mouth-total-width: 115px;
+$mouth-total-height: 111px;
+$mouth-image: '../img/sprite.png';
+$mouth: (0px, 0px, 0px, 0px, 72px, 68px, 115px, 111px, '../img/sprite.png', 'mouth', );
+$tongue-name: 'tongue';
+$tongue-x: 81px;
+$tongue-y: 73px;
+$tongue-offset-x: -81px;
+$tongue-offset-y: -73px;
+$tongue-width: 15px;
+$tongue-height: 14px;
+$tongue-total-width: 115px;
+$tongue-total-height: 111px;
+$tongue-image: '../img/sprite.png';
+$tongue: (81px, 73px, -81px, -73px, 15px, 14px, 115px, 111px, '../img/sprite.png', 'tongue', );
+$spritesheet-width: 115px;
+$spritesheet-height: 111px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($email, $eyebrow, $facebook, $instagram, $mouth, $tongue, );
+$spritesheet: (115px, 111px, '../img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
