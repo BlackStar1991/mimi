@@ -109,7 +109,6 @@ button {
   clear: both;
   background: $color_orange url("../img/setkaMin.png") 50% 50% repeat;
   width: 100%;
-  min-height: 597px;
   padding-top: 4px;
   border-top: 1px double #000;
   border-bottom: 2px solid #000;
@@ -123,7 +122,7 @@ button {
 
   position: relative;
   width: 100%;
-  min-height: 600px;
+  min-height: $minHeghtMainPage;
   background-color: rgba(0, 0, 0, 0.25);
 
   &__play-triangle {
@@ -150,16 +149,36 @@ button {
   position: relative;
   vertical-align: top;
   width: 100%;
+  min-height:$minHeghtMainPage;
   height: 100%;
+  box-sizing: border-box;
   background-color: $color_orange;
     .owl-nav{
       position: absolute;
+      width: 100%;
       top: 0;
-      left: 50%;
+      left: 0;
     }
+  .owl-carousel .owl-nav .owl-next{
+    float: right;
+    font-size: 0;
+    width: 75px;
+    margin-top: 20px;
+    margin-right: 30px;
+    background: transparent url("../img/arrow_right.svg")50% 50% no-repeat;
+  }
+  .owl-carousel .owl-nav .owl-prev{
+    float: left;
+    font-size: 0;
+    width: 75px;
+    margin-top: 20px;
+    margin-left: 30px;
+    background: transparent url("../img/arrow_left.svg") 50% 50% no-repeat;
+  }
 }
 
 .slider_hits {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -177,6 +196,11 @@ button {
     line-height: 17px;
   }
 
+  &__img{
+    margin-top: 38px;
+    height: 363px;
+  }
+
   &__details {
 
     color: $color_lightWhite;
@@ -184,7 +208,17 @@ button {
     font-size: 15px;
     font-weight: 400;
     line-height: 25px;
+  }
 
+  &__sale{
+    position: absolute;
+    top: 16%;
+    display: block;
+    transform: rotate(-45deg);
+    font-family: $LCChalk;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 104px;
   }
 
 }

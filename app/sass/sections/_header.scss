@@ -93,27 +93,21 @@
 
 }
 
-.bl_adress{
+.bl_nav{
   position: relative;
   float: right;
   width: 305px;
   height: 100%;
   display: inline-block;
-  border: 1px solid red;
+
 
   //overflow: hidden;
 
-  &__firstAdress{
+  &__adress{
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-  }
-  &__secondAdress{
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 80%;
   }
 
   &__tel{
@@ -122,10 +116,12 @@
     line-height: 25px;
     &_code{
       font-size: 36px;
+      font-weight: 700;
     }
 
     &_main{
       font-size: 51px;
+      font-weight: 700;
     }
 
   }
@@ -163,6 +159,28 @@
     vertical-align: top;
     @include sprite($instagram);
   }
+}
+
+.bl_menu{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0%; ///80%
+
+  &__fullMenu{
+    float: right;
+    width: 100%;
+    color: $color_lightWhite;
+    font-family: $ArialRoundedBold;
+    font-size: 20px;
+    line-height: 9px;
+  }
+
+  &__item{
+    display: inline-block;
+    width: calc(100% / 4);
+  }
+
 }
 
 
