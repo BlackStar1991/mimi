@@ -35,11 +35,6 @@
 
 
   }
-  input[type=checkbox]:checked + .bl_eye-switch{
-    transition:.3s ease;
-    top: 60%;
-    left: 36px;
-  }
 
 
   &__eyebrow {
@@ -69,9 +64,16 @@
     height: 31px;
     border-radius: 50%;
     background-color: $color_lightWhite;
+    transition: ease .3s;
     z-index: 10;
-
   }
+  .bl_eye-checkbox:checked + .bl_eye-label .bl_eye-switch{
+    transition: ease .3s;
+    top: 3px;
+    left: 36px;
+  }
+
+
 
   &_mouth{
     position: absolute;

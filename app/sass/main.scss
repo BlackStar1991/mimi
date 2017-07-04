@@ -119,7 +119,7 @@ button {
 }
 
 .bl_video{
-  border: 1px solid red;
+
   position: relative;
   width: 100%;
   height: 100%;
@@ -132,6 +132,17 @@ button {
   }
 
 }
+
+// SLIDERS
+
+.bl_fullSliders{
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  background-color: $color_orange;
+}
+
 
 
 /*********************************************/

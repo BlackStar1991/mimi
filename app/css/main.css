@@ -900,11 +900,6 @@ button {
   left: 10px;
   opacity: 0; }
 
-.bl_eye input[type=checkbox]:checked + .bl_eye-switch {
-  transition: .3s ease;
-  top: 60%;
-  left: 36px; }
-
 .bl_eye__eyebrow {
   position: absolute;
   top: 0;
@@ -933,7 +928,13 @@ button {
   height: 31px;
   border-radius: 50%;
   background-color: #fad9c2;
+  transition: .3s ease;
   z-index: 10; }
+
+.bl_eye .bl_eye-checkbox:checked + .bl_eye-label .bl_eye-switch {
+  transition: ease .3s;
+  top: 3px;
+  left: 36px; }
 
 .bl_eye_mouth {
   position: absolute;
@@ -1036,7 +1037,7 @@ button {
 
 .bl_main {
   clear: both;
-  background-color: #ed7d31;
+  background: #ed7d31 url("../img/setkaMin.png") 50% 50% repeat;
   width: 100%;
   min-height: 597px;
   padding-top: 2px;
@@ -1044,7 +1045,6 @@ button {
   border-bottom: 8px double #000; }
 
 .bl_video {
-  border: 1px solid red;
   position: relative;
   width: 100%;
   height: 100%;
@@ -1054,6 +1054,13 @@ button {
   position: absolute;
   bottom: 19px;
   right: 16px; }
+
+.bl_fullSliders {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  background-color: #ed7d31; }
 
 /*********************************************/
 /*FOOTER*/
