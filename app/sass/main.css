@@ -956,6 +956,26 @@ hr {
 /*********************************************/
 /*FONTS*/
 /*********************************************/
+@font-face {
+  font-family: "ArciformSanscyr";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ArciformSanscyr-lat-Regular/ArciformSanscyr.eot?") format("eot"), url("../fonts/ArciformSanscyr-lat-Regular/ArciformSanscyr.ttf") format("truetype"), url("../fonts/ArciformSanscyr-lat-Regular/ArciformSanscyr.woff") format("woff"), url("../fonts/ArciformSanscyr-lat-Regular/ArciformSanscyr.woff2") format("woff2"); }
+@font-face {
+  font-family: "LCChalk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/LCChalk/LCChalk.eot?") format("eot"), url("../fonts/LCChalk/LCChalk.ttf") format("truetype"), url("../fonts/LCChalk/LCChalk.woff") format("woff"), url("../fonts/LCChalk/LCChalk.woff2") format("woff2"); }
+@font-face {
+  font-family: "CenturyGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/CenturyGothic/CenturyGothic.eot?") format("eot"), url("../fonts/CenturyGothic/CenturyGothic.ttf") format("truetype"), url("../fonts/CenturyGothic/CenturyGothic.woff") format("woff"), url("../fonts/CenturyGothic/CenturyGothic.woff2") format("woff2"); }
+@font-face {
+  font-family: "ArialRoundedBold";
+  font-style: bold;
+  font-weight: 700;
+  src: url("../fonts/ArialRoundedMTBold/ArialRoundedMTBold.eot?") format("eot"), url("../fonts/ArialRoundedMTBold/ArialRoundedMTBold.ttf") format("truetype"), url("../fonts/ArialRoundedMTBold/ArialRoundedMTBold.woff") format("woff"), url("../fonts/ArialRoundedMTBold/ArialRoundedMTBold.woff2") format("woff2"); }
 /*********************************************/
 /*MAIN STYLES*/
 /*********************************************/
@@ -1019,7 +1039,7 @@ button {
   background-color: #ed7d31;
   width: 100%;
   min-height: 130px;
-  border-bottom: 8px double #000; }
+  border-bottom: 2px solid #000; }
   .bl_header__full {
     margin-top: 2%;
     padding-bottom: 2%; }
@@ -1043,7 +1063,7 @@ button {
     top: 0;
     left: -13px;
     background-image: url(../img/sprite.png);
-    background-position: -77px -43px;
+    background-position: -198px -83px;
     width: 24px;
     height: 25px;
     z-index: 11; }
@@ -1084,7 +1104,7 @@ button {
     left: 0;
     bottom: -15%;
     background-image: url(../img/sprite.png);
-    background-position: -81px -73px;
+    background-position: -198px -113px;
     width: 15px;
     height: 14px;
     z-index: 14; }
@@ -1093,8 +1113,9 @@ button {
   position: relative;
   float: right;
   width: 305px;
-  height: 72px;
-  display: inline-block; }
+  height: 100%;
+  display: inline-block;
+  border: 1px solid red; }
   .bl_adress__firstAdress {
     position: absolute;
     width: 100%;
@@ -1104,14 +1125,14 @@ button {
     position: absolute;
     width: 100%;
     top: 0;
-    left: 150%; }
+    left: 80%; }
   .bl_adress__tel {
     text-align: right;
     font-family: "ArialRoundedMTBold", sans-serif;
     line-height: 25px; }
     .bl_adress__tel_code {
       font-size: 36px; }
-    .bl_adress__tel_mail {
+    .bl_adress__tel_main {
       font-size: 51px; }
   .bl_adress__street {
     margin-top: 10px;
@@ -1127,7 +1148,7 @@ button {
     vertical-align: top;
     margin-left: 10px;
     background-image: url(../img/sprite.png);
-    background-position: 0px -73px;
+    background-position: -198px 0px;
     width: 36px;
     height: 38px; }
   .bl_adress__facebook {
@@ -1135,14 +1156,14 @@ button {
     vertical-align: top;
     margin-left: 10px;
     background-image: url(../img/sprite.png);
-    background-position: -77px 0px;
+    background-position: -151px -47px;
     width: 38px;
     height: 38px; }
   .bl_adress__instagram {
     float: right;
     vertical-align: top;
     background-image: url(../img/sprite.png);
-    background-position: -41px -73px;
+    background-position: -198px -43px;
     width: 35px;
     height: 35px; }
 
@@ -1163,19 +1184,36 @@ button {
   background: #ed7d31 url("../img/setkaMin.png") 50% 50% repeat;
   width: 100%;
   min-height: 597px;
-  padding-top: 2px;
-  border-top: 8px solid #000;
-  border-bottom: 8px double #000; }
+  padding-top: 4px;
+  border-top: 1px double #000;
+  border-bottom: 2px solid #000; }
+
+.bl_orange {
+  background-color: #ed7d31; }
 
 .bl_video {
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 600px;
   background-color: rgba(0, 0, 0, 0.25); }
-  .bl_video__icon {
+  .bl_video__play-triangle {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/sprite.png);
+    background-position: 0px -73px;
+    width: 60px;
+    height: 80px; }
+  .bl_video__link {
+    position: absolute;
+    display: block;
     bottom: 19px;
-    right: 16px; }
+    right: 16px;
+    background-image: url(../img/sprite.png);
+    background-position: -77px -96px;
+    width: 51px;
+    height: 44px; }
 
 .bl_fullSliders {
   position: relative;
@@ -1183,6 +1221,31 @@ button {
   width: 100%;
   height: 100%;
   background-color: #ed7d31; }
+  .bl_fullSliders .owl-nav {
+    position: absolute;
+    top: 0;
+    left: 50%; }
+
+.slider_hits {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.slider_item__title {
+  width: 172px;
+  display: block;
+  text-align: center;
+  margin: 6px auto 0;
+  font-family: "ArialRoundedMTBold", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17px; }
+.slider_item__details {
+  color: #fad9c2;
+  font-family: "ArialRoundedMTBold", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px; }
 
 /*********************************************/
 /*FOOTER*/

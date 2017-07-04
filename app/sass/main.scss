@@ -10,7 +10,10 @@
 /*FONTS*/
 /*********************************************/
 
-//@include font-face("Arial", "../fonts/Arial/Arial", normal, eot ttf woff woff2);
+@include font-face("ArciformSanscyr", "../fonts/ArciformSanscyr-lat-Regular/ArciformSanscyr", 400, normal, eot ttf woff woff2);
+@include font-face("LCChalk", "../fonts/LCChalk/LCChalk", 400, normal, eot ttf woff woff2);
+@include font-face("CenturyGothic", "../fonts/CenturyGothic/CenturyGothic", 400, normal, eot ttf woff woff2);
+@include font-face("ArialRoundedBold", "../fonts/ArialRoundedMTBold/ArialRoundedMTBold", 700, bold, eot ttf woff woff2);
 
 /*********************************************/
 /*MAIN STYLES*/
@@ -24,8 +27,6 @@ body {
   min-width: 320px;
   position: relative;
 }
-
-
 
 .mainWrapper {
   position: relative;
@@ -76,7 +77,6 @@ button {
   margin: 0;
 }
 
-
 /*********************************************/
 /*TYPOGRAPHY*/
 /*********************************************/
@@ -84,8 +84,6 @@ button {
 /*********************************************/
 /*STICKY FOOTER*/
 /*********************************************/
-
-
 
 /*********************************************/
 /*HEADER*/
@@ -97,7 +95,7 @@ button {
 /*SECTIONS*/
 /*********************************************/
 
-.mainWrapper{
+.mainWrapper {
   position: relative;
   width: 100%;
   min-width: 320px;
@@ -107,43 +105,89 @@ button {
   overflow: hidden;
 }
 
-
-.bl_main{
+.bl_main {
   clear: both;
   background: $color_orange url("../img/setkaMin.png") 50% 50% repeat;
   width: 100%;
   min-height: 597px;
-  padding-top: 2px;
-  border-top: 8px solid #000;
-  border-bottom: 8px double #000;
+  padding-top: 4px;
+  border-top: 1px double #000;
+  border-bottom: 2px solid #000;
 }
 
-.bl_video{
+.bl_orange {
+  background-color: $color_orange;
+}
+
+.bl_video {
 
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 600px;
   background-color: rgba(0, 0, 0, 0.25);
 
-  &__icon{
+  &__play-triangle {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include sprite($play-triangle);
+  }
+
+  &__link {
+    position: absolute;
+    display: block;
     bottom: 19px;
     right: 16px;
+    @include sprite($hesh);
   }
 
 }
 
 // SLIDERS
 
-.bl_fullSliders{
+.bl_fullSliders {
   position: relative;
   vertical-align: top;
   width: 100%;
   height: 100%;
   background-color: $color_orange;
+    .owl-nav{
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
 }
 
+.slider_hits {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
+.slider_item {
+  &__title {
+    width: 172px;
+    display: block;
+    text-align: center;
+    margin: 6px auto 0;
+    font-family: $ArialRoundedBold;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 17px;
+  }
+
+  &__details {
+
+    color: $color_lightWhite;
+    font-family: $ArialRoundedBold;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+
+  }
+
+}
 
 /*********************************************/
 /*FOOTER*/

@@ -4,7 +4,7 @@
   width: 100%;
   min-height: 130px;
 
-  border-bottom: 8px double #000;
+  border-bottom: 2px solid #000;
 
 
   &__full {
@@ -97,9 +97,9 @@
   position: relative;
   float: right;
   width: 305px;
-  height: 72px;
+  height: 100%;
   display: inline-block;
-
+  border: 1px solid red;
 
   //overflow: hidden;
 
@@ -113,7 +113,7 @@
     position: absolute;
     width: 100%;
     top: 0;
-    left: 150%;
+    left: 80%;
   }
 
   &__tel{
@@ -124,7 +124,7 @@
       font-size: 36px;
     }
 
-    &_mail{
+    &_main{
       font-size: 51px;
     }
 
