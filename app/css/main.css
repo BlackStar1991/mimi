@@ -1044,6 +1044,7 @@ button {
   border-bottom: 8px double #000; }
 
 .bl_video {
+  border: 1px solid red;
   position: relative;
   width: 100%;
   height: 100%;
